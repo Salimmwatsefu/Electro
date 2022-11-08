@@ -1,0 +1,14 @@
+.sign {
+    margin-top: 8%;
+    width: 40%;
+}
+.sign-card {
+    text-align:center;
+    padding: 30px;
+}
+.lock-icon {
+    color: rgb(10, 10, 10);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
