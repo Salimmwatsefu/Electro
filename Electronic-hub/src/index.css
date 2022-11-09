@@ -6,7 +6,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,57 +13,70 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: #fdfafa;
+  background-image: url("https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-width: 100%;
+
+}
+.fa-cart-plus {
+  color: rgb(20, 165, 223);
+  font-size: 18px;
+}
+.fa-cart-plus .badge {
+  font-size: 15 !important;
+}
+.nav-item {
+  padding-left: 20px;
+}
+.d-flex {
+  margin-left: 80%;
+}
+.search {
+  margin-left: 60%; 
+}
+.d-flex .btn {
+  margin-right: 10px;
+}
+.navbar {
+  padding: 20px !important;
+}
+.navbar h4 {
+color: rgb(20, 165, 223);
+}
+.products {
+  background-color: rgb(214, 221, 219);
+  padding: 20px;
+}
+.products .container {
+  padding: 20px;
+}
+.products .container .card {
+  margin-top: 20px;
+  background-color: transparent !important;
+}
+.categories {
+  list-style-type: none;
+  margin-top: 20px;
+}
+.categories .badge {
+  padding: 20px;
+
+}
+.add-product {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+}
+.add-product .container {
+  padding: 20px;
+  text-align: center;
+  width: 40%;
+}
+.categories .btn {
+  width:150px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
