@@ -1,14 +1,24 @@
 import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 
 const ProductNavbar = () => {
+  const navigate = useNavigate();
   const { cart, setCart } = useContext(CartContext);
+
+  const onClick = () => {
+    localStorage.removeItem("buyer");
+    navigate("/");
+  };
 
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <h4>Electronics Hub</h4>
+          <Link className="links" to="/product">
+            <h4>Electronics Hub</h4>
+          </Link>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -32,12 +42,18 @@ const ProductNavbar = () => {
               </li>
 
               <li className="nav-item">
-                <i className="nav-link fas fa-cart-plus ">
+                <i
+                  className="nav-link fas fa-cart-plus "
+                  onClick={() => navigate("/product/cart")}
+                >
                   <span className="badge bg-secondary">{cart}</span>
                 </i>
               </li>
               <li className="nav-item">
-                <button className="btn-danger btn btn-md nav-link">
+                <button
+                  className="btn-danger btn btn-md nav-link"
+                  onClick={onClick}
+                >
                   Logout
                 </button>
               </li>
