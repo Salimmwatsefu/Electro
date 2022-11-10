@@ -15,11 +15,7 @@
 }
 body {
   background-color: #fdfafa;
-  background-image: url("https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  min-width: 100%;
+ 
 
 }
 .fa-cart-plus {
@@ -77,6 +73,12 @@ color: rgb(20, 165, 223);
 }
 .categories .btn {
   width:150px;
+}
+.table img {
+  height: 50px;
+}
+.links {
+  text-decoration: none !important;
 }
 
 

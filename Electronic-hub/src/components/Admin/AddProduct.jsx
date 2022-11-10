@@ -1,70 +1,102 @@
-import React from "react";
+import React, { useState } from "react";
+import { addProduct } from "../../Data/addProduct";
 import AdminNavbar from "./Navbar";
 
 const AddProduct = () => {
+  const initialState = {
+    name: "",
+    image: "",
+    price: 0,
+    category: "",
+    stock: 0,
+    description: "",
+  };
+  const [formData, setFormData] = useState(initialState);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    addProduct(formData);
+    console.log(formData);
+  };
   return (
     <div>
       <AdminNavbar />
       <div className="container-fluid add-product">
         <div className="container">
           <h5 className="mb-3">Add A Product</h5>
-          <form>
-            <div class="form-floating mb-3">
+          <form onSubmit={onSubmit}>
+            <div className="form-floating mb-3">
               <input
+                onChange={handleChange}
+                name="name"
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="floatingInput"
                 placeholder="name@example.com"
                 required
               />
               <label for="floatingInput">Product Name</label>
             </div>
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
+                onChange={handleChange}
+                name="image"
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="floatingInput"
                 placeholder="name@example.com"
                 required
               />
               <label for="floatingInput">Product Image</label>
             </div>
-            <div class="form-floating mb-3 ">
+            <div className="form-floating mb-3 ">
               <input
+                onChange={handleChange}
+                name="price"
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="floatingPassword"
                 placeholder="Password"
               />
               <label for="floatingPassword">Product Price</label>
             </div>
-            <div class="form-floating  mb-3">
+            <div className="form-floating  mb-3">
               <select
-                class="form-select"
+                onChange={handleChange}
+                name="category"
+                className="form-select"
                 id="floatingSelect"
                 aria-label="Floating label select example"
                 required
               >
                 <option selected>Select Category</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="Televisions">Tvs</option>
+                <option value="Laptops">Laptops</option>
+                <option value="phones">Phones</option>
               </select>
               <label for="floatingSelect">Product Category</label>
             </div>
-            <div class="form-floating  mb-3">
+            <div className="form-floating  mb-3">
               <input
+                onChange={handleChange}
+                name="stock"
                 type="number"
-                class="form-control"
+                className="form-control"
                 id="floatingPassword"
                 placeholder="Password"
                 required
               />
               <label for="floatingPassword mb-3">Product Stock</label>
             </div>
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <textarea
-                class="form-control"
+                onChange={handleChange}
+                name="description"
+                className="form-control"
                 placeholder="Leave a comment here"
                 id="floatingTextarea"
                 required
