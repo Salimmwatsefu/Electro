@@ -1,29 +1,35 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import productCart from "../../Data/cart";
 import ProductNavbar from "./Navbar";
+import { NumericFormat } from "react-number-format";
 
 function GetCart() {
   const navigate = useNavigate();
   const [items, setItems] = useState(productCart.getCart);
-  const [quantity, setQuantity] = useState(1);
   const { setCart } = useContext(CartContext);
-  const [total, setTotal] = useState(0);
-
-  const handleChange = (e, index) => {
-    productCart.updateCart(index, e.target.value);
+  const handleChange = (event, index) => {
+    let updatedCartItems = items;
+    if (event.target.value == 0) {
+      updatedCartItems[index].quantity = 1;
+    } else {
+      updatedCartItems[index].quantity = event.target.value;
+    }
+    setItems([...updatedCartItems]);
+    productCart.updateCart(index, event.target.value);
+    console.log(items);
   };
 
+  productCart.getCart();
   useEffect(() => {
-    const newTotal = items.map((item) => {
-      const newprice = item.quantity * item.product.price;
-      return newprice;
-    });
-    const sumTotal = newTotal.reduce((a, b) => a + b, 0);
-    setTotal(sumTotal);
-    setItems(productCart.getCart);
-  }, [quantity]);
+    getTotal();
+  }, [items]);
+  const getTotal = () => {
+    return items.reduce((a, b) => {
+      return parseInt(a) + parseInt(b.quantity) * parseInt(b.product.price);
+    }, 0);
+  };
 
   const onEmptyCart = () => {
     productCart.emptyCart(() => {
@@ -31,11 +37,11 @@ function GetCart() {
     });
     setCart(0);
   };
-
-  const addQuantity = () => {
-    setQuantity(quantity + 1);
+  const onCheckout = () => {
+    localStorage.setItem("total price", getTotal());
+    navigate("/product/checkout");
   };
-  console.log(total);
+
   return (
     <div>
       <ProductNavbar />
@@ -61,7 +67,14 @@ function GetCart() {
                     />
                   </th>
                   <td>{item.product.name.toLowerCase()}</td>
-                  <td>ksh. {item.product.price}</td>
+                  <td>
+                    <NumericFormat
+                      value={item.product.price}
+                      displayType={"text"}
+                      thousandSeparator={true}
+                      prefix={"ksh"}
+                    />
+                  </td>
                   <td>
                     <input
                       onChange={(e) => handleChange(e, index)}
@@ -77,9 +90,19 @@ function GetCart() {
               </tbody>
             ))}
           </table>
-          <h5 className="text-center mt-3">Total: ksh {total} </h5>
+          <h5 className="text-center mt-3">
+            Total:{" "}
+            <NumericFormat
+              value={getTotal()}
+              displayType={"text"}
+              thousandSeparator={true}
+              prefix={"ksh"}
+            />{" "}
+          </h5>
           <div className="text-center m-2">
-            <button className="btn btn-warning btn-md m-2">Checkout</button>
+            <button className="btn btn-warning btn-md m-2" onClick={onCheckout}>
+              Checkout
+            </button>
             <button className="btn btn-danger btn-md m-2" onClick={onEmptyCart}>
               Empty Cart
             </button>

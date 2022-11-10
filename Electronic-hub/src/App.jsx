@@ -7,6 +7,7 @@ import Home from "./components/Home/Home";
 import Product from "./components/Products/Product";
 import AddProduct from "./components/Admin/AddProduct";
 import GetCart from "./components/Products/GetCart";
+import Checkout from "./components/Products/Checkout";
 const App = () => {
   return (
     <Routes>
@@ -16,6 +17,7 @@ const App = () => {
       <Route path="/buyer/sign" element={<BuyerSign />} />
       <Route path="/product" element={<Product />} />
       <Route path="/product/cart" element={<GetCart />} />
+      <Route path="/product/checkout" element={<Checkout />} />
     </Routes>
   );
 };

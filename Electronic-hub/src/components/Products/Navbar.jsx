@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 
 const ProductNavbar = () => {
   const navigate = useNavigate();
-  const { cart, setCart } = useContext(CartContext);
-
+  const { cart, setCart, products, setProducts } = useContext(CartContext);
+  const [search, setSearch] = useState("");
   const [user] = useState(JSON.parse(localStorage.getItem("buyer")));
 
   const onClick = () => {
@@ -13,7 +13,20 @@ const ProductNavbar = () => {
     localStorage.removeItem("cart");
     navigate("/");
   };
-  console.log(user);
+
+  const handleChange = (e) => {
+    const results = products.filter((product) => {
+      if (e.target.value === "") return products;
+      return (
+        product.name.includes(e.target.value) ||
+        product.category.includes(e.target.value)
+      );
+    });
+    setProducts(results);
+    setSearch(e.target.value);
+  };
+
+  console.log(products);
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -42,6 +55,8 @@ const ProductNavbar = () => {
                 <input
                   className="form-control me-2 nav-link"
                   type="search"
+                  value={search}
+                  onChange={handleChange}
                   placeholder="Search for any product"
                   aria-label="Search"
                 />{" "}

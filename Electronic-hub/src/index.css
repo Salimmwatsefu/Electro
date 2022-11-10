@@ -83,5 +83,10 @@ color: rgb(20, 165, 223);
 .table input {
   width: 70px;
 }
-
+.checkout {
+  width: 40%;
+}
+.checkout-product {
+  background-color: white !important;
+}
 

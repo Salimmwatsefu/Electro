@@ -8,5 +8,12 @@ const addProduct = async (post) => {
     console.log(error);
   }
 };
+const addOrder = async (post) => {
+  try {
+    axios.post(`${url}/orders`, post).then((data) => console.log(data.data));
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-export { addProduct };
+export { addProduct, addOrder };
