@@ -32,7 +32,7 @@ body {
   margin-left: 80%;
 }
 .search {
-  margin-left: 60%; 
+  margin-left: 40%; 
 }
 .d-flex .btn {
   margin-right: 10px;
@@ -79,6 +79,9 @@ color: rgb(20, 165, 223);
 }
 .links {
   text-decoration: none !important;
+}
+.table input {
+  width: 70px;
 }
 
 

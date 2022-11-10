@@ -10,14 +10,19 @@ function GetCart() {
   const [quantity, setQuantity] = useState(1);
   const { setCart } = useContext(CartContext);
   const [total, setTotal] = useState(0);
-  const newTotal = items.map((item) => {
-    const newprice = quantity * item.product.price;
-    return newprice;
-  });
 
-  const sumTotal = newTotal.reduce((a, b) => a + b, 0);
+  const handleChange = (e, index) => {
+    productCart.updateCart(index, e.target.value);
+  };
+
   useEffect(() => {
+    const newTotal = items.map((item) => {
+      const newprice = item.quantity * item.product.price;
+      return newprice;
+    });
+    const sumTotal = newTotal.reduce((a, b) => a + b, 0);
     setTotal(sumTotal);
+    setItems(productCart.getCart);
   }, [quantity]);
 
   const onEmptyCart = () => {
@@ -30,7 +35,7 @@ function GetCart() {
   const addQuantity = () => {
     setQuantity(quantity + 1);
   };
-  console.log(newTotal);
+  console.log(total);
   return (
     <div>
       <ProductNavbar />
@@ -45,7 +50,7 @@ function GetCart() {
                 <th scope="col">Quantity</th>
               </tr>
             </thead>
-            {items.map((item) => (
+            {items.map((item, index) => (
               <tbody>
                 <tr>
                   <th scope="row">
@@ -57,7 +62,17 @@ function GetCart() {
                   </th>
                   <td>{item.product.name.toLowerCase()}</td>
                   <td>ksh. {item.product.price}</td>
-                  <td>{item.quantity}</td>
+                  <td>
+                    <input
+                      onChange={(e) => handleChange(e, index)}
+                      required
+                      name="quantity"
+                      type="number"
+                      class="form-control"
+                      id="floatingInput"
+                      defaultValue={item.quantity}
+                    />
+                  </td>
                 </tr>
               </tbody>
             ))}
