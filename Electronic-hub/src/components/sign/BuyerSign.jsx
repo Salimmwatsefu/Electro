@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AddBuyer } from "../../Data/Sign";
+import { AddBuyer, logInBuyer } from "../../Data/Sign";
 import "./sign.css";
 const BuyerSign = () => {
   const initialState = { name: "", email: "", password: "" };
@@ -18,7 +18,11 @@ const BuyerSign = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    AddBuyer(formData, setIsLoading, navigate);
+    if (isSignUp) {
+      AddBuyer(formData, setIsLoading, navigate);
+    } else {
+      logInBuyer(formData, setIsLoading, navigate);
+    }
   };
   return (
     <div className="container sign">

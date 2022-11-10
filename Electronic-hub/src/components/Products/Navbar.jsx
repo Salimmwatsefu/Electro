@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 
@@ -6,11 +6,14 @@ const ProductNavbar = () => {
   const navigate = useNavigate();
   const { cart, setCart } = useContext(CartContext);
 
+  const [user] = useState(JSON.parse(localStorage.getItem("buyer")));
+
   const onClick = () => {
     localStorage.removeItem("buyer");
+    localStorage.removeItem("cart");
     navigate("/");
   };
-
+  console.log(user);
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -32,6 +35,9 @@ const ProductNavbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav search me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <h5 className="nav-link">Welcome {user.name}</h5>
+              </li>
               <li className="nav-item">
                 <input
                   className="form-control me-2 nav-link"

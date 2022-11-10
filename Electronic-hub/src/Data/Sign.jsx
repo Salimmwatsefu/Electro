@@ -6,7 +6,7 @@ const AddBuyer = async (post, setIsLoading, navigate) => {
   try {
     axios
       .post(`${url}/buyers`, post)
-      .then((data) => localStorage.setItem("buyer", data.data))
+      .then((data) => localStorage.setItem("buyer", JSON.stringify(data.data)))
       .then(() => navigate("/product"));
   } catch (error) {
     console.log(error);
@@ -18,7 +18,7 @@ const logInBuyer = async (post, setIsLoading, navigate) => {
   try {
     axios
       .post(`${url}/buyers`, post)
-      .then((data) => localStorage.setItem("buyer", data.data))
+      .then((data) => localStorage.setItem("buyer", JSON.stringify(data.data)))
       .then(() => navigate("/product"));
   } catch (error) {
     console.log(error);
