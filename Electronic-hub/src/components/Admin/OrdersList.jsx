@@ -22,7 +22,6 @@ const OrdersList = () => {
                 <th scope="col">id</th>
                 <th scope="col">Buyer Email</th>
                 <th scope="col">Delivery Address</th>
-                <th scope="col">Actions</th>
               </tr>
             </thead>
             {orders.map((order) => (
