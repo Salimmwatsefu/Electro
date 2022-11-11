@@ -31,14 +31,6 @@ const OrdersList = () => {
                   <td>{order.id}</td>
                   <td>{order.buyer_name}</td>
                   <td>{order.product_name}</td>
-                  <td>
-                    <button
-                      className="btn btn-danger btn-sm m-1"
-                      onClick={() => onDelete(order.id)}
-                    >
-                      Delete
-                    </button>
-                  </td>
                 </tr>
               </tbody>
             ))}

@@ -48,7 +48,7 @@ const deleteBuyer = (id, navigate) => {
 const deleteOrder = (id, navigate) => {
   try {
     axios
-      .delete(`${url}/orders/${id}`)
+      .delete(`${url}/order/${id}`)
       .then((data) => console.log(data.data))
       .then(() => navigate(0));
   } catch (error) {
