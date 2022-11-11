@@ -33,7 +33,6 @@ const BuyersList = () => {
                   <td>{buyer.name}</td>
                   <td>{buyer.email}</td>
                   <td>
-                    <button className="btn btn-success btn-sm m-1">View</button>
                     <button
                       className="btn btn-danger btn-sm m-1"
                       onClick={() => onDelete(buyer.id)}
