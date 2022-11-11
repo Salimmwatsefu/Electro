@@ -12,3 +12,11 @@
     margin-bottom: 20px;
     font-size: 30px;
 }
+
+@media screen and (max-width:920px) {
+    .sign {
+        margin-top: 5%;
+        width: 95%;
+    }
+    
+ }

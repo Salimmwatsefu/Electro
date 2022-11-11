@@ -27,6 +27,7 @@ body {
 }
 .nav-item {
   padding-left: 20px;
+  padding: 2opx;
 }
 .d-flex {
   margin-left: 80%;
@@ -95,4 +96,23 @@ color: rgb(20, 165, 223);
 
 .products .card {
   height: 400px;
+
+}
+
+@media screen and (max-width:920px) {
+
+  .products .card {
+    height: 100%;
+  }
+  .checkout {
+    width: 90%;
+  }
+  .add-product .container {
+   
+    width: 90%;
+  }
+  .d-flex {
+    margin-left: 70%;
+    margin-top: 2%;
+  }
 }

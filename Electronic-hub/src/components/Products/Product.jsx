@@ -40,9 +40,9 @@ const Product = () => {
         <div className="container-fluid products">
           <div className="container">
             <div className="row padding">
-              <div className="col-lg-3">
+              <div className="col-lg-3 mb-3">
                 <div className="card">
-                  <ul className="categories">
+                  <ul className="categories text-center">
                     <button class="btn btn-outline-secondary btn-md mb-3">
                       Laptops
                     </button>
@@ -66,8 +66,8 @@ const Product = () => {
                 </div>
               </div>
               {products.map((product, index) => (
-                <div className="col-lg-3">
-                  <div className="card text-center">
+                <div className="col-lg-3 mb-3">
+                  <div className="card text-center mb-3">
                     <img
                       src={product.image}
                       className="card-img-top"
