@@ -2,7 +2,12 @@
     background-color: aquamarine;
     padding: 200px;
     text-align: center;
-    opacity: 0.8;
+    opacity: 0.4;
+    background-image: url("https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-width: 100%;
 }
 .banner h5 {
     color: rgb(71, 70, 70);
