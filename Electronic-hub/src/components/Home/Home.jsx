@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import "./Home.css";
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
         <div className="container">
           <h5 className="text-center mb-5">Services</h5>
           <div className="row padding">
-            <div className="col-lg-4">
+            <div className="col-lg-4 mb-3">
               <div className="card">
                 <i className="fa-solid fa-truck icon text-center"></i>
                 <div className="card-body">
@@ -23,13 +24,15 @@ const Home = () => {
                     Just make order and we shall provide delivery services to
                     your doorstep within the shortest time possible
                   </p>
-                  <button className="btn btn-outline-primary">
-                    Get Started
-                  </button>
+                  <Link to="/buyer/sign">
+                    <button className="btn btn-outline-primary">
+                      Get Started
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4  mb-3">
               <div className="card">
                 <i className="fa-solid fa-laptop icon text-center"></i>
                 <div className="card-body">
@@ -39,13 +42,15 @@ const Home = () => {
                     the world from reliable supplies and this has made us unique
                     in terms of products and services we offer
                   </p>
-                  <button className="btn btn-outline-primary">
-                    Get Started
-                  </button>
+                  <Link to="/buyer/sign">
+                    <button className="btn btn-outline-primary">
+                      Get Started
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4  mb-3">
               <div className="card">
                 <i className="fa-sharp fa-solid fa-lock icon text-center"></i>
                 <div className="card-body">
@@ -55,9 +60,11 @@ const Home = () => {
                     subject to terms and conditions attached in the warranty
                     attached to our products
                   </p>
-                  <button className="btn btn-outline-primary">
-                    Get Started
-                  </button>
+                  <Link to="/buyer/sign">
+                    <button className="btn btn-outline-primary">
+                      Get Started
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
