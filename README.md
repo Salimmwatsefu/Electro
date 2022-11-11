@@ -1,6 +1,7 @@
 # Electronic-hub Website
 ### Back-End Development Languages
 - Ruby
+- SQLite
 
 ### Front-End Development Deliverables :
 - Web Design 
@@ -34,7 +35,7 @@ This project was a collaboration between a team of five developers:
  So, as developers, we were asked to design and create an E-commerce web site specifically for electronic devices which facilitates the communication between the product owners and the buyers.
 
 N.B: The work is done with the following technologies
-- Backend: Ruby.
+- Backend: Ruby - SQLite.
 - Frontend: Html - Css - Javascript - Bootstrap -React.
 
 At the end of the project we managed to achieve a great success with a well-made platform while respecting the specifications and making our client very satisfied with the result.
@@ -49,7 +50,7 @@ At the end of the project we managed to achieve a great success with a well-made
 
 ###### The authentification page of ecommerce website
 
-![2 Login Page]()
+![2 Login Page](./Electronic-hub/images/Screenshot%20from%20buyer%20login%20page.png)
 
 ###### The registration page of ecommerce website
 
@@ -57,7 +58,7 @@ At the end of the project we managed to achieve a great success with a well-made
 
 ###### The Products Page where you can choose a specific product to buy
 
-![5 Products Page]()
+![5 Products Page](./Electronic-hub/images/Screenshot%20from%20products%20page.png)
 
 ###### The Product details Page
 
@@ -65,9 +66,8 @@ At the end of the project we managed to achieve a great success with a well-made
 
 ###### The Shopping Cart Page
 
-![7 Shopping Cart Page]()
+![7 Cart Page](./Electronic-hub/images/Screenshot%20from%20cart%20page.png)
 
 ###### The Payment Page
 
-![8 Payment Page]()
 
