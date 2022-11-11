@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 import { addOrder } from "../../Data/addProduct";
 import ProductNavbar from "./Navbar";
 
@@ -12,6 +14,9 @@ const Checkout = () => {
     country: "",
   };
   const [formData, setFormData] = useState(initialState);
+  const { setCart } = useContext(CartContext);
+
+  const navigate = useNavigate();
 
   const [total, setTotal] = useState(
     JSON.parse(localStorage.getItem("total price"))
@@ -19,7 +24,7 @@ const Checkout = () => {
   useEffect(() => {
     setTotal(JSON.parse(localStorage.getItem("total price")));
   });
-  const handleChange = () => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -31,7 +36,7 @@ const Checkout = () => {
       total: total,
       product_name: `${formData.address}, ${formData.zip}, ${formData.city},${formData.country}`,
     };
-    addOrder(post);
+    addOrder(post, setCart, navigate);
   };
   console.log(total);
   return (

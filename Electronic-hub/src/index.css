@@ -89,4 +89,10 @@ color: rgb(20, 165, 223);
 .checkout-product {
   background-color: white !important;
 }
+.admin{
+  margin-left: 40%;
+}
 
+.products .card {
+  height: 400px;
+}

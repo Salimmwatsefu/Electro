@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 import { addProduct } from "../../Data/addProduct";
 import AdminNavbar from "./Navbar";
 
 const AddProduct = () => {
+  const navigate = useNavigate();
   const initialState = {
     name: "",
     image: "",
@@ -19,7 +21,7 @@ const AddProduct = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    addProduct(formData);
+    addProduct(formData, navigate);
     console.log(formData);
   };
   return (
