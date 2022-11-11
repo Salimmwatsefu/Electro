@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router";
 import { CartContext } from "../../context/CartContext";
-import { deleteProduct } from "../../Data/addProduct";
+import { deleteBuyer, deleteProduct } from "../../Data/addProduct";
 import AdminNavbar from "./Navbar";
 import { NumericFormat } from "react-number-format";
 
-const ProductList = () => {
+const BuyersList = () => {
   const navigate = useNavigate();
-  const { products } = useContext(CartContext);
+  const { buyers } = useContext(CartContext);
 
   const onDelete = (id) => {
-    deleteProduct(id, navigate);
+    deleteBuyer(id, navigate);
   };
   return (
     <div>
@@ -21,28 +21,22 @@ const ProductList = () => {
             <thead>
               <tr>
                 <th scope="col">id</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Price</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
-            {products.map((product) => (
-              <tbody key={product.id}>
+            {buyers.map((buyer) => (
+              <tbody key={buyer.id}>
                 <tr>
-                  <td>{product.id}</td>
-                  <td>{product.name}</td>
+                  <td>{buyer.id}</td>
+                  <td>{buyer.name}</td>
+                  <td>{buyer.email}</td>
                   <td>
-                    <NumericFormat
-                      value={product.price}
-                      displayType={"text"}
-                      thousandSeparator={true}
-                      prefix={"ksh"}
-                    />
-                  </td>
-                  <td>
+                    <button className="btn btn-success btn-sm m-1">View</button>
                     <button
                       className="btn btn-danger btn-sm m-1"
-                      onClick={() => onDelete(product.id)}
+                      onClick={() => onDelete(buyer.id)}
                     >
                       Delete
                     </button>
@@ -57,4 +51,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default BuyersList;

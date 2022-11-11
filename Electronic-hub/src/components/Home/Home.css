@@ -10,7 +10,7 @@
     min-width: 100%;
 }
 .banner h5 {
-    color: rgb(71, 70, 70);
+    color: black;
 }
 .about {
     background-color: rgb(199, 206, 204);
@@ -34,6 +34,7 @@
     text-align: center;
     padding: 20px;
     background-color: transparent !important;
+    height:400px;
 }
 .icon {
     margin-top: 20px;

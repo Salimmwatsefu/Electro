@@ -8,11 +8,17 @@ import Product from "./components/Products/Product";
 import AddProduct from "./components/Admin/AddProduct";
 import GetCart from "./components/Products/GetCart";
 import Checkout from "./components/Products/Checkout";
+import ProductList from "./components/Admin/ProductList";
+import OrdersList from "./components/Admin/OrdersList";
+import BuyersList from "./components/Admin/BuyersList";
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/admin" element={<SellerSign />} />
+      <Route path="/admin/products" element={<ProductList />} />
+      <Route path="/admin/orders" element={<OrdersList />} />
+      <Route path="/admin/buyers" element={<BuyersList />} />
       <Route path="/admin/add-product" element={<AddProduct />} />
       <Route path="/buyer/sign" element={<BuyerSign />} />
       <Route path="/product" element={<Product />} />

@@ -5,9 +5,12 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState(0);
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [orders, setOrders] = useState([]);
+  const [buyers, setBuyers] = useState([]);
   useEffect(() => {
     getData();
+    getOrders();
+    getBuyers();
   }, []);
 
   const getData = async () => {
@@ -18,9 +21,32 @@ const CartProvider = ({ children }) => {
     setIsLoading(false);
   };
 
+  const getOrders = async () => {
+    setIsLoading(true);
+    const response = await fetch(`${url}/orders`);
+    const result = await response.json();
+    setOrders(result);
+    setIsLoading(false);
+  };
+  const getBuyers = async () => {
+    setIsLoading(true);
+    const response = await fetch(`${url}/buyers`);
+    const result = await response.json();
+    setBuyers(result);
+    setIsLoading(false);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, setCart, products, setProducts, isLoading }}
+      value={{
+        cart,
+        setCart,
+        products,
+        setProducts,
+        isLoading,
+        orders,
+        buyers,
+      }}
     >
       {children}
     </CartContext.Provider>
