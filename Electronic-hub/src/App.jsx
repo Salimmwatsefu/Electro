@@ -8,7 +8,6 @@ import Product from "./components/Products/Product";
 import AddProduct from "./components/Admin/AddProduct";
 import GetCart from "./components/Products/GetCart";
 import Checkout from "./components/Products/Checkout";
-import Cart from "./components/Cart/Cart";
 const App = () => {
   return (
     <Routes>

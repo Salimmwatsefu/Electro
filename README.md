@@ -27,8 +27,8 @@ This project was a collaboration between a team of five developers:
 
 
 ## Project description :
- Many E-commerce web applications have one stop shop for everything,This is great in some sense but also the problem is that clients ends up buying things they didn’t intend to buy and skip the one they really wanted. 
- Also these website have many vendors some of them are not trusted with their products and clients end up returning products.
+ As E-Commerce industry grows many online platforms are coming up with variety of products and services ,Customers on the other hand are looking for quality products and this can only be provided by a business which specialized in one line of products.
+ Specialization comes with a lot of benefits eg. Better value proposition,smaller learning curve,higher perception of authority,higher conversion and better networking.
  For years, online stores have been widely advised for businesses that rely on the selling of goods and services. These types of websites serve as a global device that connects clients to all relevant information, products, and services through a single portal.
  Creating an E-commerce website that only focuses with specific products and in our case is all the Electronics hence the name Electronic hub.This website will hold all the electronic products such as laptops,Televisions and phones.By doing this we will help clients to only come to this website when they need electronics.
  So, as developers, we were asked to design and create an E-commerce web site specifically for electronic devices which facilitates the communication between the product owners and the buyers.
@@ -45,7 +45,7 @@ At the end of the project we managed to achieve a great success with a well-made
 
 ###### The main page of ecommerce website
 
-![1 Main Page of Electronic-hub website]()
+![1 Main Page of Electronic-hub website](./Electronic-hub/images/Screenshot%20from%20landing%20page.png)
 
 ###### The authentification page of ecommerce website
 
