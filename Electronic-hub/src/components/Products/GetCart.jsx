@@ -50,7 +50,7 @@ function GetCart() {
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">Image</th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>

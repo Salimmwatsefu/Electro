@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { addProduct } from "../../Data/addProduct";
 import AdminNavbar from "./Navbar";
+import Sidebar from "./Sidebar";
 
 const AddProduct = () => {
   const navigate = useNavigate();
@@ -26,10 +27,14 @@ const AddProduct = () => {
   };
   return (
     <div>
+       
       <AdminNavbar />
+
+      <div className=""><Sidebar /></div>
+      
       <div className="container-fluid add-product">
         <div className="container">
-          <h5 className="mb-3">Add A Product</h5>
+          <h5 className="mb-3 text-lg font-bold text-red-800">Add A Product</h5>
           <form onSubmit={onSubmit}>
             <div className="form-floating mb-3">
               <input
@@ -106,7 +111,7 @@ const AddProduct = () => {
               <label for="floatingTextarea">Description</label>
             </div>
 
-            <button className="btn btn-primary btn-md">Add Product</button>
+            <button className="btn btn-primary btn-md bg-red-700 hover:bg-red-900">Add Product</button>
           </form>
         </div>
       </div>

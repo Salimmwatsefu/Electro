@@ -4,6 +4,7 @@ import { CartContext } from "../../context/CartContext";
 import { deleteProduct } from "../../Data/addProduct";
 import AdminNavbar from "./Navbar";
 import { NumericFormat } from "react-number-format";
+import Sidebar from "./Sidebar";
 
 const ProductList = () => {
   const navigate = useNavigate();
@@ -15,8 +16,9 @@ const ProductList = () => {
   return (
     <div>
       <AdminNavbar />
-      <div className="container-fluid text-center checkout-product p-5">
-        <div className="container  ">
+      <div className=""><Sidebar /></div>
+      <div className="container-fluid text-center checkout-product p-5 ml-28">
+        <div className="container w-9/12 ">
           <table class="table">
             <thead>
               <tr>
@@ -41,7 +43,7 @@ const ProductList = () => {
                   </td>
                   <td>
                     <button
-                      className="btn btn-danger btn-sm m-1"
+                      className="btn bg-red-700 hover:bg-red-900 text-white btn-sm m-1"
                       onClick={() => onDelete(product.id)}
                     >
                       Delete

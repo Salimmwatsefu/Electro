@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -19,11 +19,11 @@ body {
 
 }
 .fa-cart-plus {
-  color: rgb(20, 165, 223);
+  color: rgb(180, 39, 39);
   font-size: 18px;
 }
 .fa-cart-plus .badge {
-  font-size: 15 !important;
+  font-size: 10px !important;
 }
 .nav-item {
   padding-left: 20px;
@@ -42,10 +42,12 @@ body {
   padding: 20px !important;
 }
 .navbar h4 {
-color: rgb(20, 165, 223);
+color: rgb(180, 39, 39);
+font-weight: 700;
+font-size: 23px;
 }
 .products {
-  background-color: rgb(214, 221, 219);
+  background-color: rgba(179, 70, 70, 0.123);
   padding: 20px;
 }
 .products .container {
@@ -53,7 +55,8 @@ color: rgb(20, 165, 223);
 }
 .products .container .card {
   margin-top: 20px;
-  background-color: transparent !important;
+  background-color: rgba(179, 70, 70, 0.123) !important;
+  height: 400px;
 }
 .categories {
   list-style-type: none;
@@ -116,3 +119,7 @@ color: rgb(20, 165, 223);
     margin-top: 2%;
   }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

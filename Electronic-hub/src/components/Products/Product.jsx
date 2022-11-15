@@ -40,9 +40,9 @@ const Product = () => {
         <div className="container-fluid products">
           <div className="container">
             <div className="row padding">
-              <div className="col-lg-3 mb-3">
-                <div className="card">
-                  <ul className="categories text-center">
+              <div className="">
+                <div className="">
+                  <ul className=" text-center items-center justify-center flex gap-10">
                     <button class="btn btn-outline-secondary btn-md mb-3">
                       Laptops
                     </button>
@@ -70,7 +70,7 @@ const Product = () => {
                   <div className="card text-center mb-3">
                     <img
                       src={product.image}
-                      className="card-img-top"
+                      className="card-img-top h-60"
                       alt="..."
                     />
                     <div className="card-body">
@@ -78,7 +78,7 @@ const Product = () => {
                         {product.name.toLowerCase()}
                       </h5>
                       {/* <p className="card-text">{product.description}</p> */}
-                      <h6 className="mb-2 mt-2">Price: Ksh. {product.price}</h6>
+                      <h6 className="mb-2 mt-2 font-semibold">Price: Ksh. {product.price}</h6>
                       {inCart.includes(product.id) ? (
                         <button
                           className="btn btn-success btn-md"
@@ -88,7 +88,7 @@ const Product = () => {
                         </button>
                       ) : (
                         <button
-                          className="btn btn-primary btn-md"
+                          className="btn btn-primary btn-md bg-red-700 hover:bg-red-900 font-semibold"
                           onClick={() => onAddToCart(product)}
                         >
                           Add to cart

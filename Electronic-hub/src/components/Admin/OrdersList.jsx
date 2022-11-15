@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { CartContext } from "../../context/CartContext";
 import { deleteOrder } from "../../Data/addProduct";
 import AdminNavbar from "./Navbar";
+import Sidebar from "./Sidebar";
 
 const OrdersList = () => {
   const navigate = useNavigate();
@@ -14,8 +15,9 @@ const OrdersList = () => {
   return (
     <div>
       <AdminNavbar />
-      <div className="container-fluid text-center checkout-product p-5">
-        <div className="container  ">
+      <div className=""><Sidebar /></div>
+      <div className=" container-fluid text-center checkout-product p-5 ml-28">
+        <div className="container w-9/12 ">
           <table class="table">
             <thead>
               <tr>

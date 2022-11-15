@@ -29,10 +29,10 @@ const ProductNavbar = () => {
   console.log(products);
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
+      <nav className="p-3">
+        <div className="container-fluid flex">
           <Link className="links" to="/product">
-            <h4>Electronics Hub</h4>
+            <h4 className=" absolute text-red-900 font-extrabold text-2xl">Electro Hub</h4>
           </Link>
 
           <button
@@ -46,8 +46,8 @@ const ProductNavbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav search me-auto mb-2 mb-lg-0">
+          <div className="" id="navbarSupportedContent">
+            <ul className=" flex ml-96 gap-28">
               <li className="nav-item">
                 <h5 className="nav-link">Welcome {user.name}</h5>
               </li>
@@ -67,12 +67,12 @@ const ProductNavbar = () => {
                   className="nav-link fas fa-cart-plus "
                   onClick={() => navigate("/product/cart")}
                 >
-                  <span className="badge bg-secondary">{cart}</span>
+                  <span className="badge bg-slate-300">{cart}</span>
                 </i>
               </li>
               <li className="nav-item">
                 <button
-                  className="btn-danger btn btn-md nav-link"
+                  className="bg-red-700 w-20 h-10 btn btn-md nav-link rounded-lg text-white hover:bg-red-900"
                   onClick={onClick}
                 >
                   Logout

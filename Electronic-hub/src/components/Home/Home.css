@@ -1,8 +1,8 @@
 .banner {
     background-color: aquamarine;
     padding: 100px;
-    opacity: 0.6;
-    background-image: url("https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg");
+    /*background-image: url("https://www.lg.com/eastafrica/images/plp-b2c/HE_WorldCup_LGcom_1600-800px.png");*/
+    background-image: url("https://www.lg.com/eastafrica/images/oled-tv/2021/sport/TV-OLED-SPORT-08-Bluetooth-Surround-Ready-Desktop-1.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -10,11 +10,37 @@
     text-align: center;
 }
 .banner h5 {
-    color: black;
+    color: rgb(138, 18, 18);
+    text-align: left;
+    font-size: 50px;
+    font-weight: 700;
 }
+
+.banner p {
+    color: white;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.shop{
+    background-color: rgb(180, 39, 39);
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    border: 0px;
+    color: white;
+    margin-top: 5px;
+    margin-right: 150px;
+}
+.shop:hover{
+    background-color: rgb(138, 18, 18);
+}
+
 .about {
-    background-color: rgb(199, 206, 204);
+    background-color: rgb(196, 196, 196);
     padding: 50px;
+    border-top-right-radius: 300px;
 }
 .about img {
     border-radius: 20px;
@@ -23,27 +49,71 @@
 }
 .about p {
     margin-left: 20px;
+    color: white;
+    font-weight: 900;
+}
+
+.about h5{
+    font-size: 20px;
+    font-weight: 900;
+    color: rgb(138, 18, 18) ;
+
 }
 .services {
     
-    background-color: rgb(214, 221, 219);
-    padding: 50px;
+    background-color: rgba(179, 70, 70, 0.123);
+    padding: 30px;
     
+}
+.services .top{
+    font-size: 25px;
+    font-weight: 900;
+    color: rgb(138, 18, 18) ;
 }
 .services .card {
     text-align: center;
     padding: 20px;
-    background-color: transparent !important;
-    height:400px;
+    background-color: rgb(255, 255, 255)  !important;
+    height:300px;
+    border-radius: 40px;
+    box-shadow: rgba(138, 18, 18, 0.6) 5px 5px, rgba(138, 18, 18, 0.3) 10px 10px, rgba(138, 18, 18, 0.2) 15px 15px, rgba(138, 18, 18, 0.1) 20px 20px, rgba(138, 18, 18, 0.05) 25px 25px;
 }
 .icon {
     margin-top: 20px;
-    font-size: 80px;
+    font-size: 50px;
+    color: darkred;
 }
-.banner .banner-title {
-    padding: 10px;
-    margin-top: 2%;
+.banner .hero {
+    margin-top: 100px;
+    background-color: rgba(253, 253, 253, 0.2);
+    height: 270px  ;
+    width: 500px;
 
+}
+.card-title{
+    color: rgb(138, 18, 18);
+    font-weight: 700;
+}
+
+.card-text{
+    font-weight: 500;
+    color: black;
+}
+
+.buy-now{
+    background-color: transparent;
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+    border: 0px;
+    color: rgb(138, 18, 18);
+    font-weight: 800;
+}
+
+.buy-now:hover{
+    background-color: rgb(138, 18, 18) ;
+    color: white;
+    transition: ease-in-out 0.3s;
 }
 
 @media screen and (max-width:920px) {

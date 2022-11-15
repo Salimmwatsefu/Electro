@@ -40,11 +40,11 @@ const Checkout = () => {
   };
   console.log(total);
   return (
-    <div>
+    <div className="">
       <ProductNavbar />
       <div className="container-fluid text-center checkout-product p-5">
-        <div className="container  checkout">
-          <h5 className="mb-3">Checkout Details</h5>
+        <div className="container  checkout w-96 bg-red-100">
+          <h5 className="my-3 pt-3 text-red-800 font-bold text-xl">Checkout Details</h5>
           <form onSubmit={onSubmit}>
             <div class="form-floating mb-3">
               <input
@@ -71,7 +71,7 @@ const Checkout = () => {
               <label for="floatingInput">Email</label>
             </div>
 
-            <h6>Delivery Address</h6>
+            <h6 className="my-3 text-red-800 font-bold text-xl">Delivery Address</h6>
             <div class="form-floating mb-3">
               <input
                 onChange={handleChange}

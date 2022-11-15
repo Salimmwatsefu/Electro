@@ -9,9 +9,9 @@ const AdminNavbar = () => {
   };
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <h4>Electronics Hub</h4>
+      <nav className="flex bg-red-50 ">
+        <div className=" flex">
+          <h4 className="text-red-900 font-bold text-2xl py-3">Electro Hub</h4>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,34 +23,11 @@ const AdminNavbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav admin me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <h5 className="nav-link">Welcome Admin</h5>
-              </li>
-              <li className="nav-item">
-                <Link to="/admin/add-product" className="links nav-link">
-                  Add Product
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/admin/products" className="links nav-link">
-                  Products
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/admin/orders" className="links nav-link">
-                  Orders
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/admin/buyers" className="links nav-link">
-                  Buyers
-                </Link>
-              </li>
+          <div className="flex pl-96 ml-96" id="navbarSupportedContent">
+            <ul className=" flex admin mb-2 ml-48">
               <li className="nav-item">
                 <button
-                  className="btn-danger btn btn-md nav-link"
+                  className="bg-red-700 hover:bg-red-900 text-white btn btn-md nav-link w-20 h-8 mt-3"
                   onClick={logout}
                 >
                   Logout
